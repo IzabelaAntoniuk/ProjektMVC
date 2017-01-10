@@ -16,11 +16,11 @@ namespace MVCBiblioteka.Controllers
 
         // GET: Books
         //[Authorize]
-        public ActionResult Index(string searchTitle, string searchISBN, string searchAuthor,string searchCategory)
+        public ActionResult Index(string searchTitle, string searchISBN, string searchAuthor, string searchCategory)
         {
-           
+
             var books = db.Books.ToList();
-            
+
             if (!String.IsNullOrEmpty(searchTitle))
             {
                 books = books.Where(g => g.title.Contains(searchTitle)).ToList();
@@ -54,6 +54,13 @@ namespace MVCBiblioteka.Controllers
         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name");
+            ViewBag.PublisherID = new SelectList(db.Publishers, "PublisherID", "name");
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "name");
+            ViewBag.AuthorID2 = new SelectList(db.Authors, "AuthorID", "surname");
+            ViewBag.BookStateID = new SelectList(db.BookStates, "BookStateID", "state");
+
+
             return View();
         }
 
@@ -62,7 +69,7 @@ namespace MVCBiblioteka.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookID,title,premiereDate,PublisherID,AuthorID,CategoryID,description,state,ISBN,LendID")] Book book)
+        public ActionResult Create([Bind(Include = "BookID,title,premiereDate,PublisherID,AuthorID,CategoryID,description,state,ISBN,LendID,BookStateID")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +77,11 @@ namespace MVCBiblioteka.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name", book.CategoryID);
+            ViewBag.PublisherID = new SelectList(db.Publishers, "PublisherID", "name");
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "name");
+            ViewBag.AuthorID2 = new SelectList(db.Authors, "AuthorID", "surname");
+            ViewBag.BookStateID = new SelectList(db.BookStates, "BookStateID", "state");
 
             return View(book);
         }
@@ -77,16 +89,7 @@ namespace MVCBiblioteka.Controllers
         // GET: Books/Edit/5
         public ActionResult Edit(int? id)
         {
-
-            var CategoryList = new List<string>();
-
-            var CategoryQry = from d in db.Categories
-                              orderby d.name
-                              select d.name;
-
-            CategoryList.AddRange(CategoryQry.Distinct());
-            ViewBag.bookCategory = new SelectList(CategoryList);
-
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,6 +99,13 @@ namespace MVCBiblioteka.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name", book.CategoryID);
+            ViewBag.PublisherID = new SelectList(db.Publishers, "PublisherID", "name");
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "name");
+            ViewBag.AuthorID2 = new SelectList(db.Authors, "AuthorID", "surname");
+            ViewBag.BookStateID = new SelectList(db.BookStates, "BookStateID", "state");
+
+
             return View(book);
         }
 
@@ -104,7 +114,7 @@ namespace MVCBiblioteka.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookID,title,premiereDate,PublisherID,AuthorID,CategoryID,description,state,ISBN,LendID")] Book book)
+        public ActionResult Edit([Bind(Include = "BookID,title,premiereDate,PublisherID,AuthorID,CategoryID,description,state,ISBN,LendID,BookStateID")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -112,6 +122,12 @@ namespace MVCBiblioteka.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name", book.CategoryID);
+            ViewBag.PublisherID = new SelectList(db.Publishers, "PublisherID", "name");
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "name");
+            ViewBag.AuthorID2 = new SelectList(db.Authors, "AuthorID", "surname");
+            ViewBag.BookStateID = new SelectList(db.BookStates, "BookStateID", "state");
+
             return View(book);
         }
 

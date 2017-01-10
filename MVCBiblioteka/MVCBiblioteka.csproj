@@ -354,10 +354,23 @@
     <Compile Include="Migrations\201612151145327_eh.Designer.cs">
       <DependentUpon>201612151145327_eh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701100116559_bookstate.cs" />
+    <Compile Include="Migrations\201701100116559_bookstate.Designer.cs">
+      <DependentUpon>201701100116559_bookstate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701101430169_state.cs" />
+    <Compile Include="Migrations\201701101430169_state.Designer.cs">
+      <DependentUpon>201701101430169_state.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701101435491_statere.cs" />
+    <Compile Include="Migrations\201701101435491_statere.Designer.cs">
+      <DependentUpon>201701101435491_statere.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookState.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -596,6 +609,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612151145327_eh.resx">
       <DependentUpon>201612151145327_eh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701100116559_bookstate.resx">
+      <DependentUpon>201701100116559_bookstate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701101430169_state.resx">
+      <DependentUpon>201701101430169_state.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701101435491_statere.resx">
+      <DependentUpon>201701101435491_statere.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

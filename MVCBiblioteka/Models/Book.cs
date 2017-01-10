@@ -28,15 +28,20 @@ namespace MVCBiblioteka.Models
         [Required]
         [Display(Name = "Opis: ")]
         public string description { get; set; }
-        [Required]
+        //[Required]
         [Display(Name = "Status książki: ")]
         public string state { get; set; }
         [Required]
         public string ISBN { get; set; }
 
+        [Required]
+        [Display(Name = "Status: ")]
+        public int BookStateID { get; set; }
+
         public virtual ICollection<Publisher> Publishers { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
         public virtual ICollection<Category> Category { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual BookState BookState { get; set; }
     }
 }
