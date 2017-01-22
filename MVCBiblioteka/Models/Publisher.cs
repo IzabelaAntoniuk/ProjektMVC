@@ -19,6 +19,6 @@ namespace MVCBiblioteka.Models
         public string description { get; set; }
         public int BookID { get; set; }
 
-        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<PublisherBooks> PublisherBooks { get; set; }
     }
 }

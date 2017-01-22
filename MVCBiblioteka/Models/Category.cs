@@ -12,6 +12,6 @@ namespace MVCBiblioteka.Models
         [Display(Name = "Nazwa: ")]
         public string name { get; set; }
 
-        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<CategoryBooks> CategoryBooks { get; set; }
     }
 }

@@ -108,12 +108,12 @@ namespace MVCBiblioteka.Models
             // Multiply album price by count of that album to get 
             // the current price for each of those albums in the cart
             // sum all album price totals to get the cart total
-            int total = (from cartItems in storeDB.Carts
+            int? total = (from cartItems in storeDB.Carts
                               where cartItems.CartID == BooksCartID
-                              select cartItems.Count).Sum();
+                              select (int?)cartItems.Count).Sum();
             //cartItems.Book.AuthorID).Sum();
 
-            return total;// ?? decimal.Zero;
+            return total ?? 0;// ?? decimal.Zero;
         }
         public int CreateOrder(Order order)
         {

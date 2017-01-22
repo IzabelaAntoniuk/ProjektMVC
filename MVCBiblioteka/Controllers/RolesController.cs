@@ -13,9 +13,9 @@ namespace MVCBiblioteka.Controllers
         {
             IdentityManager im = new IdentityManager();
 
-            im.DeleteRole("Administrator");
-            im.DeleteRole("Czytelnik");
-            im.DeleteRole("Pracownik");
+            //im.DeleteRole("Administrator");
+            //im.DeleteRole("Czytelnik");
+            //im.DeleteRole("Pracownik");
 
             im.CreateRole("Administrator");
             im.CreateRole("Czytelnik");

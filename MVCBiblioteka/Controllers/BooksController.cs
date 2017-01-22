@@ -54,6 +54,8 @@ namespace MVCBiblioteka.Controllers
         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name");
+
             return View();
         }
 
@@ -67,9 +69,15 @@ namespace MVCBiblioteka.Controllers
             if (ModelState.IsValid)
             {
                 db.Books.Add(book);
+                CategoryBooks CategoryBook = new CategoryBooks();
+                CategoryBook.BookID = book.BookID;
+                CategoryBook.CategoryID = book.CategoryID;
+                db.CategoryBooks.Add(CategoryBook);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "name", book.CategoryID);
 
             return View(book);
         }
@@ -78,14 +86,16 @@ namespace MVCBiblioteka.Controllers
         public ActionResult Edit(int? id)
         {
 
-            var CategoryList = new List<string>();
+            //var CategoryList = new List<string>();
 
-            var CategoryQry = from d in db.Categories
-                              orderby d.name
-                              select d.name;
+            //var CategoryQry = from d in db.Categories
+            //                  orderby d.name
+            //                  select d.name;
 
-            CategoryList.AddRange(CategoryQry.Distinct());
-            ViewBag.bookCategory = new SelectList(CategoryList);
+            //CategoryList.AddRange(CategoryQry.Distinct());
+            //ViewBag.bookCategory = new SelectList(CategoryList);
+
+            ViewBag.GenreId = new SelectList(db.Categories, "GenreId", "Name");
 
             if (id == null)
             {

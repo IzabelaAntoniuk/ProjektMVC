@@ -34,9 +34,14 @@ namespace MVCBiblioteka.Models
         [Required]
         public string ISBN { get; set; }
 
-        public virtual ICollection<Publisher> Publishers { get; set; }
-        public virtual ICollection<Author> Authors { get; set; }
-        public virtual ICollection<Category> Category { get; set; }
+        //[Required]
+        //[Display(Name = "Status: ")]
+        //public int BookStateID { get; set; }
+
+        public virtual ICollection<PublisherBooks> PublishersBooks { get; set; }
+        public virtual ICollection<AuthorBooks> AuthorsBooks { get; set; }
+        public virtual ICollection<CategoryBooks> CategoryBooks { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual BookState BookState { get; set; }
     }
 }

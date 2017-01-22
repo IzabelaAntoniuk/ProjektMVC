@@ -354,24 +354,68 @@
     <Compile Include="Migrations\201612151145327_eh.Designer.cs">
       <DependentUpon>201612151145327_eh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701101212472_bookstate.cs" />
+    <Compile Include="Migrations\201701101212472_bookstate.Designer.cs">
+      <DependentUpon>201701101212472_bookstate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212105359_tabeleLaczace.cs" />
+    <Compile Include="Migrations\201701212105359_tabeleLaczace.Designer.cs">
+      <DependentUpon>201701212105359_tabeleLaczace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212124025_newBase.cs" />
+    <Compile Include="Migrations\201701212124025_newBase.Designer.cs">
+      <DependentUpon>201701212124025_newBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212142231_newBase1.cs" />
+    <Compile Include="Migrations\201701212142231_newBase1.Designer.cs">
+      <DependentUpon>201701212142231_newBase1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212145387_newBase2.cs" />
+    <Compile Include="Migrations\201701212145387_newBase2.Designer.cs">
+      <DependentUpon>201701212145387_newBase2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212146358_newBase3.cs" />
+    <Compile Include="Migrations\201701212146358_newBase3.Designer.cs">
+      <DependentUpon>201701212146358_newBase3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212147481_newBase4.cs" />
+    <Compile Include="Migrations\201701212147481_newBase4.Designer.cs">
+      <DependentUpon>201701212147481_newBase4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212152391_newBase5.cs" />
+    <Compile Include="Migrations\201701212152391_newBase5.Designer.cs">
+      <DependentUpon>201701212152391_newBase5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701212234429_newBase6.cs" />
+    <Compile Include="Migrations\201701212234429_newBase6.Designer.cs">
+      <DependentUpon>201701212234429_newBase6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\AuthorBooks.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookState.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryBooks.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\BooksCart.cs" />
+    <Compile Include="Models\PublisherBooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BooksCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\BooksCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\main.css" />
@@ -482,7 +526,6 @@
     <Content Include="Views\Users\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Roles\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
@@ -596,6 +639,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612151145327_eh.resx">
       <DependentUpon>201612151145327_eh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701101212472_bookstate.resx">
+      <DependentUpon>201701101212472_bookstate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212105359_tabeleLaczace.resx">
+      <DependentUpon>201701212105359_tabeleLaczace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212124025_newBase.resx">
+      <DependentUpon>201701212124025_newBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212142231_newBase1.resx">
+      <DependentUpon>201701212142231_newBase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212145387_newBase2.resx">
+      <DependentUpon>201701212145387_newBase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212146358_newBase3.resx">
+      <DependentUpon>201701212146358_newBase3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212147481_newBase4.resx">
+      <DependentUpon>201701212147481_newBase4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212152391_newBase5.resx">
+      <DependentUpon>201701212152391_newBase5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701212234429_newBase6.resx">
+      <DependentUpon>201701212234429_newBase6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

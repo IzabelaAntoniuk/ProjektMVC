@@ -126,8 +126,10 @@ namespace MVCBiblioteka.Controllers
 
         public ActionResult Browse(string genre)
         {
-            var genreModel = db.Categories.Include("Books")
+            var genreModel = db.Categories.Include("CategoryBooks")
                 .Single(g => g.name == genre);
+
+            //var genreModel = db.CategoryBooks.Include("Books")
 
             return View(genreModel);
         }

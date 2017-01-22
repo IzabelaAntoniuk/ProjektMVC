@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PublisherID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Publishers.FirstOrDefault().name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PublisherID, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PublisherID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,8 +41,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AuthorID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Authors.FirstOrDefault().name, new { htmlAttributes = new { @class = "form-control",placeholder="Imię" } })
-                @Html.EditorFor(model => model.Authors.FirstOrDefault().surname, new { htmlAttributes = new { @class = "form-control", placeholder="Nazwisko"} })
+                @Html.EditorFor(model => model.AuthorID, new { htmlAttributes = new { @class = "form-control",placeholder="Imię" } })
+                @Html.EditorFor(model => model.AuthorID, new { htmlAttributes = new { @class = "form-control", placeholder="Nazwisko"} })
                 @Html.ValidationMessageFor(model => model.AuthorID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Category.FirstOrDefault().name, new { htmlAttributes = new { @class = "form-control" }  })
+                @*@Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control" }  })*@
+                @Html.DropDownList("CategoryID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
             </div>
         </div>

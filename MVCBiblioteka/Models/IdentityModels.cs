@@ -53,6 +53,9 @@ namespace MVCBiblioteka.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<BooksCart> ShoppingCarts { get; set; }
+        public DbSet<CategoryBooks> CategoryBooks { get; set; }
+        public DbSet<PublisherBooks> PublisherBooks { get; set; }
+        public DbSet<AuthorBooks> AuthorBooks { get; set; }
         public DbSet<BooksCartViewModel> ShoppingCartsViewModel { get; set; }
         public DbSet<BooksCartRemoveViewModel> ShoppingCartsRemoveViewModel { get; set; }
     }
